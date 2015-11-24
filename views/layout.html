@@ -12,7 +12,6 @@
 		<link href="/stylesheets/style.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 	</head>
 	<body>
 		<div class="container top-image">
@@ -79,15 +78,37 @@
 					</div>
 				</div>
 			</div>
-
 			<div id="map-area" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<iframe width="100%" height="100%" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/view?zoom=10&center=40.7128,-74.0059&key=AIzaSyBV2ENQYqEynno5R02ZXoDnBzRABEMWHrY" allowfullscreen></iframe>
+				<iframe id="gmap" width="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/view?zoom=10&center=40.7128,-74.0059&key=AIzaSyBV2ENQYqEynno5R02ZXoDnBzRABEMWHrY" allowfullscreen"></iframe>
 			</div>
 		</div>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script>
+		function jsUpdateSize(){
+	    var height = window.innerHeight ||
+	                 document.documentElement.clientHeight ||
+	                 document.body.clientHeight;
+
+	    console.log(height.toString());
+	    document.getElementById('gmap').height = height.toString();// Display the height
+		};
+
+		$(window).scroll(function (event) {
+	    var scroll = $(window).scrollTop();
+	    var theMap = document.getElementById('map-area');
+	    if (scroll > 500) {
+	    	$(theMap).css({position: "fixed", top: 0, right: 0});
+	    }
+	    if (scroll < 500) {
+	    	$(theMap).css({position: "relative", right: 0});
+	    }
+		});
+
+		window.onload = jsUpdateSize;       // When the page first loads
+		window.onresize = jsUpdateSize;     // When the browser changes size
+		</script>
 	</body>
 </html>
