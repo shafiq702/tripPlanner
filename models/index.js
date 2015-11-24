@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var marked = require('marked');
 mongoose.connect('mongodb://localhost/trip_planner');
 
 var db = mongoose.connection;
@@ -34,8 +33,7 @@ var Hotel = new mongoose.Schema({
         required: true
     },
     place: {
-    	type: [mongoose.Schema.Types.ObjectId],
-    	ref: 'Place'
+    	type: [Place]
     },
     num_stars: {
         type: Number,
@@ -57,8 +55,7 @@ var Activity = new mongoose.Schema({
 		required: true
 	},
 	place:{
-		type: [mongoose.Schema.Types.ObjectId],
-		ref: 'Place'
+		type: [Place]
 	},
 	age_range:{
 		type: String
@@ -71,8 +68,7 @@ var Restaurant = new mongoose.Schema({
 		required: true
 	},
 	place:{
-		type: [mongoose.Schema.Types.ObjectId],
-		ref: 'Place'
+		type: [Place]
 	},
 	cuisines:{
 		type: [String],
@@ -80,22 +76,21 @@ var Restaurant = new mongoose.Schema({
 			return cuisines.join(',')
 		}
 	},
-	price{
+	price: {
 		type: Number,
 		min: 1,
 		max: 5
 	}
 });
 
+var Place = mongoose.model('Place', Place);
+var Hotel = mongoose.model('Hotel', Hotel);
+var Activity = mongoose.model('Activity', Activity);
+var Restaurant = mongoose.model('Restaurant', Restaurant);
 
-
-
-
-
-
-
-
-
-
-
-
+module.exports = {
+	Place: Place, 
+	Hotel: Hotel, 
+	Activity: Activity, 
+	Restaurant: Restaurant
+};
