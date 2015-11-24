@@ -4,17 +4,89 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+		<title>Trip Planner</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/stylesheets/normalize.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/stylesheets/style.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body>
-		<div class="jumbotron">
-			<div class="container top-image">
-				
+		<div class="container top-image">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">TripPlanner</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="#">Link</a></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Separated link</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+
+			<div class="top-stuff text-center">
+				<h2 class="white">Plan your trip</h2>
+
+				<div class="col-lg-offset-2 col-md-offset-2 col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<div class="form-wrapper">
+						<form class="form-inline">
+	            <div class="form-group">
+	                <div class='input-group date' id='datetimepicker1'>
+	                    <input type='text' placeholder="When will you arrive?" class="form-control" />
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </div>
+						  <div class="form-group">
+	                <div class='input-group date' id='datetimepicker1'>
+	                    <input type='text' placeholder="When will you leave?" class="form-control" />
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </div>
+						  <span class="form-group">
+						    In New York City
+						  </span>
+						  <button type="submit" class="btn btn-success">Start!</button>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="search-area col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				stuff
+			</div>
+
+			<div class="map-area col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				testing
 			</div>
 		</div>
 		<!-- jQuery -->
