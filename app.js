@@ -3,7 +3,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     routes = require('./routes'), 
-    sass = require('sass');
     path = require('path');
 
 var app = express();
