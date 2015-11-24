@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+  <h3>Hotels</h3>
+  <hr>
+<select name="Hotels">
+	{% for hotel in all_hotels%}
+	<option value="{{hotel.name.toLowerCase()}}" >{{hotel.name}}</option>
+	{% endfor %}
+</select>
+
+<select name="Restaurants">
+	{% for restaurant in all_restaurants%}
+	<option value="{{restaurant.name.toLowerCase()}}" >{{restaurant.name}}</option>
+	{% endfor %}
+</select>
+
+<select name="Activities">
+	{% for activity in all_activities%}
+	<option value="{{activity.name.toLowerCase()}}" >{{activity.name}}</option>
+	{% endfor %}
+</select>
+
+{% endblock %}
