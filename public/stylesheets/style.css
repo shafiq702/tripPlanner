@@ -61,13 +61,11 @@ h1, h2, h3, h4, h5, h6 {
 
 div #search-area {
   background-color: #ebedef;
-  height: 800px;
   padding-left: 0px;
   padding-right: 0px; }
 
 div #map-area {
   background-color: #52667e;
-  overflow: scroll;
   height: 800px;
   padding-left: 0px;
   padding-right: 0px; }
@@ -91,7 +89,7 @@ div #map-area {
 
 div.hotel {
   display: block;
-  background-color: #fff;
+  background-color: #ebedef;
   border: 1px #fff;
   border-radius: 10px; }
   div.hotel .hotel-information {
@@ -134,4 +132,5 @@ div.hotel {
   max-height: 250px; }
 
 .hotel-row {
-  margin-top: 15px; }
+  margin-top: 15px;
+  background-color: #fff; }
