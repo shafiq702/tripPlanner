@@ -2,7 +2,9 @@ var express = require('express'),
     swig = require('swig'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
-    routes = require('./routes');
+    path = require('path');
+
+var routes = require('./routes');
 
 var app = express();
 
@@ -17,7 +19,7 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require('./routes/routes'));
+app.use('/', routes);
 
 app.use(function(err, req, res, next){
 	console.log(err);
