@@ -10,8 +10,10 @@
 						<span class="featured-hotel">Featured Hotel</span>
 							<h3 class="hotel-name">{{hotel.name}}</h3>
 							<p class="hotel-address">
-							{{hotel.place.address}}<br>
-							{{hotel.place.city}}, {{hotel.place.state}}
+							{{hotel.place[0].address}}<br>
+							{{hotel.place[0].city}}, {{hotel.place[0].state}}<br>
+							<br>
+							{{hotel.place[0].phone}}
 							</p>
 						<ul class="hotel-amenities">
 							<li>{{hotel.place.amenities}}</li>
@@ -30,8 +32,9 @@
 				<br>
 
 				<div class="button-area">
-					<button type="button" class="btn btn-info">Read reviews</button>
-				</div>
+                	<button type="button" class="btn btn-default">Read reviews</button><br>
+                	<button type="button" class="btn btn-primary">Choose this hotel</button>
+        		</div>
 			</div>
 		{% endfor %}	
 
